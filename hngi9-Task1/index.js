@@ -1,5 +1,9 @@
 //.src/index.js
 const express= require('express')
+const cors = require('cors');
+app.use(cors({
+  origin: '*'
+}))
 
 //defining the express app
 const app=express()
