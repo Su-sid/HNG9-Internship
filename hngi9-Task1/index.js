@@ -25,5 +25,5 @@ app.get('/', (req, res) => {
 
   //starting the server
   app.listen(process.env.PORT ||5000,()=>{
-                        console.log(`listening on the open port `)
+                        console.log(`listening on the open port ${5000} `)
                       })
