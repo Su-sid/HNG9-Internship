@@ -1,9 +1,7 @@
 //.src/index.js
 const express= require('express')
 const cors = require('cors');
-app.use(cors({
-  origin: '*'
-}))
+
 
 //defining the express app
 const app=express()
@@ -11,7 +9,9 @@ const app=express()
 
 // use the express-static middleware
 app.use(express.static("/"))
-
+app.use(cors({
+  origin: '*'
+}))
 // defining an object
 const ads = { slackUsername:"su-sid",
               backend:true,
