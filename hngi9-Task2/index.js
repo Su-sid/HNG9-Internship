@@ -39,30 +39,28 @@ app.post("/", (req, res) => {
    //destructuing into three variables. 
     const  { operation_type, x, y} = req.body;
   
-// string to int conversion 
-let xvalue=parseInt(x)
-let yvalue=parseInt (y)
 
 //testing if input are numbers. 
 
-    if (isNaN(xvalue) || isNaN(yvalue))
+    if (isNaN(x) || isNaN(y))
     return res.send({
       error: "Kindly, enter a number"
     })
 
   let result = ''
 
+  //the unary plus operator before the x and y operators converts the operators from non numbers to numbers. does the same function as parseInt method.
   if (operation_type.toLowerCase() === "addition") {
-    result = +xvalue + +yvalue
+    result = +x + +y
   }
   if (operation_type.toLowerCase() === "multiplication") {
-    result = +xvalue* +yvalue
+    result = +x* +y
   }
   if (operation_type.toLowerCase() === "subtraction") {
-    result = +xvalue- +yvalue
+    result = +x- +y
   }
   else return res.send({
-    error: "select from the following accepted operations: 'addition', 'multiplication', or 'subtraction' "
+    error: "choose from the following accepted operations: 'addition', 'multiplication', or 'subtraction' "
   })
 
   res.send({
